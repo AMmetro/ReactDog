@@ -45,28 +45,26 @@ class App extends React.Component {
          this.click=()=>{
              let num=this.state.counter;
               num++;
-             
-             this.setState({counter: num});
-                };
+              this.setState({counter: num});
 
+              this.player.play();                // same result in JS:    <<-   document.getElementById('sound').play()    ->>
+
+                };
 
 
 
         return (
 
+           <div className="App">
 
-            <div className="App">
+               <audio id='sound' src={DogSound} ref={ref => (this.player = ref)} ></audio>
 
+               <div className="wrapper"> {DogList} </div>
+               <div className = "counter"> {this.state.counter} </div>
 
-
-                    <audio src={DogSound} ></audio>
-
-
-
-                <div className="wrapper"> {DogList} </div>
-
-                <div className = "counter"> {this.state.counter} </div>
-
+               {/*<audio controls="controls">*/}
+               {/*    <source src={DogSound} />*/}
+               {/*</audio>*/}
 
             </div>
 
