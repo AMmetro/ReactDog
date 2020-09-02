@@ -47,6 +47,8 @@ class App extends React.Component {
               num++;
               this.setState({counter: num});
 
+              console.log ("you are win");
+
               this.player.play();                // same result in JS:    <<-   document.getElementById('sound').play()    ->>
 
                 };
@@ -62,11 +64,7 @@ class App extends React.Component {
                <div className="wrapper"> {DogList} </div>
                <div className = "counter"> {this.state.counter} </div>
 
-               {/*<audio controls="controls">*/}
-               {/*    <source src={DogSound} />*/}
-               {/*</audio>*/}
-
-            </div>
+             </div>
 
         );
     }
